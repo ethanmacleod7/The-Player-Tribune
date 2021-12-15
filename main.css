@@ -1,0 +1,365 @@
+
+/* general */
+span{
+    display: none;
+    color: #fff;
+}
+:root{
+    --footerText:rgb(165, 161, 161);
+    --backgroundColor:  rgb(7, 7, 7);
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: rgb(32, 31, 31);
+}
+/* general */
+
+/* header */
+header {
+    /* <-- Let's setup a good container, then go from there... */
+    display: flex;
+    flex-flow: row wrap;
+    background-color: black;
+    height: 85px;
+    overflow: auto;
+}
+header ul {
+    margin: 0;
+    padding: 0;
+}
+.logo{
+    display: flex;
+    flex-shrink: 0; /* Don't let the flex-container shrink us down. */
+    width: 200px; /* Looks like this is a tad smaller on the actual website */
+    height: 60px;
+    position: relative;
+    top: 0.7rem;
+    left: 0em;
+}
+.logo img {
+    object-fit: cover; /* Let the browser crop our square image to be more rectangular */
+    width: 100%;
+    height: 100%;
+}
+.nav {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-shrink: 0;
+    margin-top: 15px; 
+}
+.nav ul li{
+    display: inline-flex;
+}
+.nav a{
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    padding: 0 10px;
+    white-space: nowrap;
+    left: 11rem;
+    bottom: 50px;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.nav-icons a{
+    position: relative;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    color: #fff;
+    bottom: 35px;
+    left: 15rem;
+    padding: 0 10px;
+    flex-shrink: 0;
+    font-size: 1.2em;
+}
+/* header */
+/* main-img */
+.main-img{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-decoration: none;
+    color: #FFFFFF;
+    display: block;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    border-radius: 0px;
+    -webkit-transition: 0.2s box-shadow ease-in-out;
+    -moz-transition: 0.2s box-shadow ease-in-out;
+    transition: 0.2s box-shadow ease-in-out;
+    will-change: box-shadow;
+    box-shadow: 0 0 0 0, 0 0 0 0px #a8a8a8;
+}
+.base-img{
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    min-width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+    object-fit: cover;
+    min-height: 100%;
+}
+.page-title{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    color: #FFFFFF;
+    display: flex;
+    justify-content:center;
+    align-items: flex-end;
+    overflow: hidden;
+    bottom: 0px;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* container */
+.box{
+    position: relative;
+    max-width: 1500px;
+    min-height: 1100px;
+    background: #fff;
+    margin: 0 auto;
+    overflow: hidden;
+    display: ;
+}
+.box-title hr{
+    position: relative;
+    height: 0.1px;
+    max-width: 760px;
+    right: 9px;
+    margin-bottom: 10px;
+    color: rgb(218, 210, 210);
+    overflow: hidden;
+    border-style:solid;
+    margin: 0 auto;
+}
+.box-title{
+    /* flex: 1 1 auto;
+    color: #252525;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+    border-top: unset;
+    border-bottom: 1px solid #DDDDDD;
+    background-color: #FFFFFF; */
+}
+.box-title h2{
+    
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* container  */
+/* articles  */
+.stories{
+    position: absolute;
+    /* display: flex;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: repeat(3, 260px);
+    grid-template-rows: repeat(4, 260px);
+    justify-content: center;
+
+    min-width: 100%;
+    max-width: 100%;
+    max-height: auto;
+    object-fit: contain;
+    min-height: 100%;
+}
+
+.stories .item img{
+    max-width: 100%;
+    max-height: auto;
+}
+
+/* footer */
+.footer{
+    height: auto;
+    width: 100vw;
+    /* padding-top: 40px; */
+}
+.footer-top{
+    padding-top: 80px;
+}
+footer .footer-top i{
+    color: #fff;
+}
+.footer-top i, hr{
+    color: var(--footerText);
+    display: flex;  
+    justify-content: center;
+    margin: 0 auto;
+}
+.left-line, .right-line{
+    max-width: 40%;
+}
+.left-line{
+    margin-left: 20px;
+}
+.right-line{
+    position: relative;
+    margin-right: 20px;
+}
+.footer-content nav {
+    display: grid;
+    grid-template-columns: repeat(2, 100px);
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 0em 5em;
+    font-size: .8em;
+    justify-content: center;
+    padding: 40px 0;
+}
+.footer-content nav a{
+    text-decoration: none;
+    display: inline-block;
+    color: var(--footerText);
+    justify-content: center;
+    width: 100%;
+    padding: 5px 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    text-align: left;
+}
+footer .bottom-line{
+    max-width: 95%;
+}
+footer .social-icons{
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+footer .social-icons i{
+    color: var(--footerText);
+    padding: 10px 10px;
+}
+aside h4{
+    color: var(--footerText);
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* footer */
+@media (min-width: 720px){
+    .footer-content nav{
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: auto auto auto;
+        grid-gap: 10px 80px;
+    }
+}
+/* footer */
+/* box */
+@media (max-width: 711px){
+    .box{
+        max-width: 100%;
+    }
+    footer .bottom-line{
+        max-width: 95%;
+    }
+}
+/* box */
+/* nav bar responsive*/
+@media (max-width: 2000px){
+    .more, .knuckle, .letter, .covid, .mental, .truss, .content{
+        display: none;
+    }
+}
+@media (max-width: 1342px){
+    .silence{
+        display: none;
+    }
+}
+@media (max-width: 1160px){
+    .sports{
+        display: none;
+    }
+}
+@media (max-width: 1160px){
+    .nav-icons a{
+        position: relative;
+        bottom: 2.5em;
+        left: 15em;
+        white-space: nowrap;
+    }
+}
+@media (min-width: 1075px){
+    .nav-icons a{
+        position: relative;
+        bottom: 2.5em;
+    }
+}
+@media (max-width: 1075px){
+    span{
+        position: relative;
+        display: initial;
+        left: 7px;   
+        top: 20px;
+        z-index: 2;
+    }
+}
+@media (max-width: 1075px){
+    .logo{
+        position: relative;
+        bottom: 1.5em;
+        left: 0.5em;
+        width: 150px;
+        height: 50px;
+    }
+}
+@media (max-width: 1075px){
+    .nav-links{
+        position: relative;
+        top: 1.9em;
+        right: 2em;
+        display: initial;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        right: 13rem;
+    }
+}
+@media (max-width: 1075px){
+    .sports, .silence, .knuckle, .letter, .covid, .mental, .truss, .content{
+        display: initial;
+    }
+/* nav bar responsive ends*/
+/* articles */
+@media (max-width: 1075px){
+    .stories{
+        display: grid;
+        grid-template-columns: repeat(2, 260px);
+        grid-template-rows: repeat(4, 260px);
+        justify-content: center;
+        padding-top: 10px;
+    }
+    .box-title hr{
+        max-width: 500px;
+    }
+}
+@media (max-width: 719px){
+    .stories{
+        display: grid;
+        grid-template-columns: repeat(1, 260px);
+        grid-template-rows: repeat(13, 260px);
+
+        justify-content: center;
+        padding-top: 10px;
+    }
+    .box{
+        height: 3200px;
+    }
+}
